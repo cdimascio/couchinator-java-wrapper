@@ -5,4 +5,4 @@ before_install:
 - nvm install 10
 script:
 - mvn clean build test
-- mvn package
+- mvn package assembly:single

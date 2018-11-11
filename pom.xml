@@ -10,7 +10,7 @@
 
     <groupId>io.github.cdimascio</groupId>
     <artifactId>couchinator-java-wrapper</artifactId>
-    <version>1.0.0</version>
+    <version>${app.version}</version>
 
     <licenses>
         <license>
@@ -34,9 +34,11 @@
     </scm>
 
     <properties>
+        <app.version>1.0.1</app.version>
         <maven.source.plugin>3.0.1</maven.source.plugin>
         <maven.javadoc.plugin>3.0.1</maven.javadoc.plugin>
         <maven.jar.plugin>3.1.0</maven.jar.plugin>
+        <maven.assembly.plugin>3.1.0</maven.assembly.plugin>
         <junit.jupiter.version>5.3.1</junit.jupiter.version>
         <main.class>io.github.cdimascio.couchinatorw.Couchinatort</main.class>
     </properties>
@@ -132,6 +134,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven.assembly.plugin}</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/descriptor.xml</descriptor>
+                    </descriptors>
+                </configuration>
             </plugin>
         </plugins>
 
