@@ -38,7 +38,11 @@ Example
 ```java
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExampleUnitTest {
-    private Couchinator couchinator = new Couchinator("http://localhost:5984", "./src/test/resources/fixtures");
+    private Couchinator couchinator = new Couchinator(
+    	"http://localhost:5984", // couchdb or cloudant url (include usename/password)
+	"./src/test/resources/fixtures" // fixtures resource location
+    );
+
     @BeforeAll
     void beforeAll() throws CouchinatorException{
         couchinator.create();
