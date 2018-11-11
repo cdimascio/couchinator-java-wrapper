@@ -33,6 +33,20 @@ compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 
 ## Usage
 
+```java
+    Couchinator couchinator = new Couchinator(url, resourceDir)
+    // Setup the databases and fixtures defined in your data layout
+    couchinator.create();
+    
+    // Teardown, then setup the databases and fixtures defined in your data layout
+    couchinator.reCreate();
+    
+    // Teardown the database defined in your data layout
+    couchinator.destroy();
+```
+
+**Note*:** Couchinator will only setup and destroy databases defined in your data layout.
+
 Example
 
 ```java
@@ -45,6 +59,7 @@ class ExampleUnitTest {
 
     @BeforeAll
     void beforeAll() throws CouchinatorException{
+    	// setup the dbs defined in your data layout
         couchinator.create();
     }
 
@@ -55,6 +70,7 @@ class ExampleUnitTest {
 
     @AfterAll
     void afterAll() throws CouchinatorException{
+        // teardown the dbs defined in your data layout
         couchinator.destroy();
     }
 }
