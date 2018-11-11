@@ -10,7 +10,21 @@ Setup ad teardown cloudant databases with ease. couchinator is a great tool for 
 
 ## Install
 
+### Maven 
 
+```xml
+<dependency>
+    <groupId>io.github.cdimascio</groupId>
+    <artifactId>couchinator-java-wrapper</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+
+```groovy
+compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
+```
 
 ## Prequisites
 - Node.js 8.x or greater
