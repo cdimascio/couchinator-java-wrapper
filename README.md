@@ -36,16 +36,21 @@ compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 Example
 
 ```java
-import io.github.cdimascio.couchinatorw.Couchinator;
-import io.github.cdimascio.couchinatorw.CouchinatorException;
-
-public class MyApp {
-    public static void main(String[] args) throws CouchinatorException{
-        Couchinator couchinator = new Couchinator("http://localhost:5984", "./fixtures");
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+class ExampleUnitTest {
+    private Couchinator couchinator = new Couchinator("http://localhost:5984", "./src/test/resources/fixtures");
+    @BeforeAll
+    void beforeAll() throws CouchinatorException{
         couchinator.create();
-	
-	// Interact with the fixtures now present in your CouchDB or Cloudant database
-	
+    }
+
+    @Test
+    public void doStuff() {
+        assertNotNull("test stuff");
+    }
+
+    @AfterAll
+    void afterAll() throws CouchinatorException{
         couchinator.destroy();
     }
 }
