@@ -31,21 +31,24 @@ The project is a Java wrapper around [couchinator](https://github.com/cdimascio/
 compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 ```
 
+### Import
+```java
+import io.github.cdimascio.couchinatorw.Couchinator;
+```
+
 ## Usage
 
 ```java
-    import io.github.cdimascio.couchinatorw.Couchinator;
-    
-    Couchinator couchinator = new Couchinator(url, resourceDir)
-    
-    // Setup the databases and fixtures defined in your data layout
-    couchinator.create();
-    
-    // Teardown, then setup the databases and fixtures defined in your data layout
-    couchinator.reCreate();
-    
-    // Teardown the database defined in your data layout
-    couchinator.destroy();
+Couchinator couchinator = new Couchinator(url, resourceDir)
+
+// Setup the databases and fixtures defined in your data layout
+couchinator.create();
+
+// Teardown, then setup the databases and fixtures defined in your data layout
+couchinator.reCreate();
+
+// Teardown the database defined in your data layout
+couchinator.destroy();
 ```
 
 **Note*:** Couchinator will only setup and destroy databases defined in your data layout.
