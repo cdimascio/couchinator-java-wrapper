@@ -12,7 +12,7 @@ Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
 
 ## Install
 
-## Prequisites
+### Prequisites
 - Node.js 8.x or greater
 
 ### Maven 
@@ -29,6 +29,28 @@ Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
 
 ```groovy
 compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
+```
+
+## Usage
+
+Example
+
+```java
+import io.github.cdimascio.couchinatorw.Couchinator;
+import io.github.cdimascio.couchinatorw.CouchinatorException;
+
+public class MyApp {
+    public static void main(String[] args) throws CouchinatorException{
+        String url = "http://localhost:5984";
+        String resourcePath = "./fixtures";
+        Couchinator couchinator = new Couchinator(url, resourcePath);
+        couchinator.create();
+        /**
+         * Interact with the fixtures now present in your CouchDB or Cloudant database
+         */
+        couchinator.destroy();
+    }
+}
 ```
 
 ## Data Layout
