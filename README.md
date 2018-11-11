@@ -21,14 +21,14 @@ The project is a Java wrapper around [couchinator](https://github.com/cdimascio/
 <dependency>
     <groupId>io.github.cdimascio</groupId>
     <artifactId>couchinator-java-wrapper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
+compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.1'
 ```
 
 ### Import
