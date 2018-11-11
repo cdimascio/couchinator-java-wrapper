@@ -8,6 +8,8 @@ Setup ad teardown cloudant databases with ease. couchinator is a great tool for 
 	<image src="https://raw.githubusercontent.com/cdimascio/couchinator-java-wrapper/master/assets/couchinator-java-wrapper.png"/>
 </p>
 
+Use [couchinator](https://github.com/cdimascio/couchinator) under the hood
+
 ## Install
 
 
