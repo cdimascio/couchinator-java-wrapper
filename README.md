@@ -47,7 +47,7 @@ compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 
 **Note*:** Couchinator will only setup and destroy databases defined in your data layout.
 
-Example
+### Junit Example
 
 ```java
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
