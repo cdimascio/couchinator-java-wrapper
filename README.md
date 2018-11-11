@@ -34,7 +34,10 @@ compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 ## Usage
 
 ```java
+    import io.github.cdimascio.couchinatorw.Couchinator;
+    
     Couchinator couchinator = new Couchinator(url, resourceDir)
+    
     // Setup the databases and fixtures defined in your data layout
     couchinator.create();
     
