@@ -8,7 +8,7 @@ Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://ww
 	<image src="https://raw.githubusercontent.com/cdimascio/couchinator-java-wrapper/master/assets/couchinator-java-wrapper.png" width="600" />
 </p>
 
-Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
+The project is a Java wrapper around [couchinator](https://github.com/cdimascio/couchinator), thus it requires Node.js.
 
 ## Install
 
