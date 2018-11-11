@@ -13,7 +13,7 @@ Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
 ## Install
 
 ### Prequisites
-- Node.js 8.x or greater
+- [Node.js](https://nodejs.org/) 8.x or greater
 
 ### Maven 
 
