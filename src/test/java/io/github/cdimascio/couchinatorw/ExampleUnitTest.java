@@ -9,7 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExampleUnitTest {
-    private Couchinator couchinator = new Couchinator("http://localhost:5984", "./src/test/resources/fixtures");
+    private Couchinator couchinator = new Couchinator(
+        "http://localhost:5984",
+        "./src/test/resources/fixtures"
+    );
+
     @BeforeAll
     void beforeAll() throws CouchinatorException{
         couchinator.create();
@@ -17,7 +21,7 @@ class ExampleUnitTest {
 
     @Test
     public void doStuff() {
-        assertNotNull("do db stuff");
+        assertNotNull("do stuff");
     }
 
     @AfterAll
