@@ -1,0 +1,8 @@
+language: java
+jdk:
+- oraclejdk8
+before_install:
+- nvm install 10
+script:
+- mvn clean build test
+- mvn package
