@@ -201,3 +201,6 @@ It's a standard bulk doc e.g. `bulkdocs1-1.json` above
   ]
 }
 ```
+
+## License
+[MIT](LICENSE)
