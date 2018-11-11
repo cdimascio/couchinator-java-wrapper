@@ -12,6 +12,9 @@ Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
 
 ## Install
 
+## Prequisites
+- Node.js 8.x or greater
+
 ### Maven 
 
 ```xml
@@ -27,10 +30,6 @@ Uses [couchinator](https://github.com/cdimascio/couchinator) under the hood
 ```groovy
 compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
 ```
-
-## Prequisites
-- Node.js 8.x or greater
-
 
 ## Data Layout
 
