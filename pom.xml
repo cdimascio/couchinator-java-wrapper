@@ -34,7 +34,7 @@
     </scm>
 
     <properties>
-        <app.version>1.0.1</app.version>
+        <app.version>1.0.2</app.version>
         <maven.source.plugin>3.0.1</maven.source.plugin>
         <maven.javadoc.plugin>3.0.1</maven.javadoc.plugin>
         <maven.jar.plugin>3.1.0</maven.jar.plugin>
