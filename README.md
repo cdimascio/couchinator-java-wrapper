@@ -65,8 +65,8 @@ couchinator.destroy();
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExampleUnitTest {
     private Couchinator couchinator = new Couchinator(
-    	"http://localhost:5984", // couchdb or cloudant url (include usename/password)
-	"./src/test/resources/fixtures" // fixtures resource location
+        "http://localhost:5984",         // couchdb or cloudant url (include usename/password)
+        "./src/test/resources/fixtures"  // fixtures resource location
     );
 
     @BeforeAll
@@ -207,7 +207,23 @@ Let's create a data layout to describe two databases **users** and **classrooms*
 5. **Run couchinator to create each database**
 
 See [Junit example](#junit-example)
-	
+
+## Integrating with Travis
+
+couchinator-java-wrapper wraps [couchinator](https://github.com/cdimascio/couchinator), a Node.js based tool, hence to Node.js must be installed in the running environment.
+
+```yaml
+language: java
+jdk:
+- oraclejdk8
+- 
+before_install:
+- nvm install 10 # install node.js
+
+script:
+# do stuff
+# ...
+```	
 
 ## License
 
