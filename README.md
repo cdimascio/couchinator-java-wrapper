@@ -4,7 +4,7 @@
 
 Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://www.ibm.com/cloud/cloudant).
 
-*Setup* and *teardown* cloudant databases with ease. Couchinator is a great tool for unit testing and more. Couchinator is both a library and a [command line utility](https://github.com/cdimascio/couchinator).
+_Setup_ and _teardown_ cloudant databases with ease. Couchinator is a great tool for unit testing and more. Couchinator is both a library and a [command line utility](https://github.com/cdimascio/couchinator).
 
 <p align="center">
 	<image src="https://raw.githubusercontent.com/cdimascio/couchinator-java-wrapper/master/assets/couchinator-java-wrapper.png" width="600" />
@@ -15,9 +15,10 @@ The project is a Java wrapper around [couchinator](https://github.com/cdimascio/
 ## Install
 
 ### Prequisites
+
 - [Node.js](https://nodejs.org/) 8.x or greater
 
-### Maven 
+### Maven
 
 ```xml
 <dependency>
@@ -34,6 +35,7 @@ compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.1'
 ```
 
 ### Import
+
 ```java
 import io.github.cdimascio.couchinatorw.Couchinator;
 ```
@@ -53,7 +55,7 @@ couchinator.reCreate();
 couchinator.destroy();
 ```
 
-**Note*:** Couchinator will only setup and destroy databases defined in your data layout.
+**Note:** Couchinator will only setup and destroy databases defined in your data layout.
 
 ### Junit Example
 
@@ -203,4 +205,5 @@ It's a standard bulk doc e.g. `bulkdocs1-1.json` above
 ```
 
 ## License
+
 [MIT](LICENSE)
