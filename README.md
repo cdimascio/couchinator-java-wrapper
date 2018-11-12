@@ -1,6 +1,7 @@
 # couchinator-java-wrapper
 
 ![](https://travis-ci.org/cdimascio/couchinator-java-wrapper.svg?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/67edd40fa18644d3b86b36d7f44ea258)](https://www.codacy.com/app/cdimascio/couchinator-java-wrapper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cdimascio/couchinator-java-wrapper&amp;utm_campaign=Badge_Grade)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://www.ibm.com/cloud/cloudant).
