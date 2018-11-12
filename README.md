@@ -1,8 +1,7 @@
-![](https://img.shields.io/badge/license-MIT-blue.svg)
-
 # couchinator-java-wrapper
 
 ![](https://travis-ci.org/cdimascio/couchinator-java-wrapper.svg?branch=master)
+![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://www.ibm.com/cloud/cloudant).
 
