@@ -86,7 +86,6 @@ class ExampleUnitTest {
 
 ## Data Layout
 
-
 ### Getting Started
 
 Couchinator enables you to represent your db as a simple directory structure residing on the filesystem. **couchinator** then reads this representation to create, update, and destroy your database(s) on demand.
@@ -106,7 +105,6 @@ Note: The `_design` folder contains your design documents
     	classrooms.json
 	classrooms-docs.json
 ```
-
 
 ### The Details
 
