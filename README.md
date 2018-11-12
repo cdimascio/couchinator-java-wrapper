@@ -1,5 +1,7 @@
 # couchinator-java-wrapper
 
+![](https://travis-ci.org/cdimascio/couchinator-java-wrapper.svg?branch=master)
+
 Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://www.ibm.com/cloud/cloudant).
 
 *Setup* and *teardown* cloudant databases with ease. Couchinator is a great tool for unit testing and more. Couchinator is both a library and a [command line utility](https://github.com/cdimascio/couchinator).
