@@ -92,7 +92,7 @@ class ExampleUnitTest {
 
 The following sections describe how to create a data layout.
 
-To skip directly to a working example, go [here](examples/db-resources)
+To skip directly to a working example, go [here](https://github.com/cdimascio/couchinator/blob/master/examples/db-resources)
 
 ### Getting Started
 
