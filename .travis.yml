@@ -1,8 +1,10 @@
 language: java
 jdk:
 - oraclejdk8
+services:
+- couchdb
 before_install:
 - nvm install 10
 script:
-- mvn clean build test
+- mvn clean compile test
 - mvn package assembly:single
