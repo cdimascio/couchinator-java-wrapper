@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/license-MIT-blue.svg)
+
 # couchinator-java-wrapper
 
 ![](https://travis-ci.org/cdimascio/couchinator-java-wrapper.svg?branch=master)
