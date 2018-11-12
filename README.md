@@ -90,40 +90,70 @@ class ExampleUnitTest {
 
 ## Data Layout
 
+The following sections describe how to create a data layout.
+
+To skip directly to a working example, go [here](examples/db-resources)
+
 ### Getting Started
 
-Couchinator enables you to represent your db as a simple directory structure residing on the filesystem. **couchinator** then reads this representation to create, update, and destroy your database(s) on demand.
+Couchinator enables you to represent CouchDB and Cloudant database(s) using a simple filesystem structure that mimics the actual database structure.
 
-Here is an example directory structure:
-Note: The `_design` folder contains your design documents
+A couchinator filesystem data layout might look as such:
 
-```
-  shools
+
+```shell
+users
     _design
-    	students.json
-		teachers.json
-	students-docs.json
-	teachers-docs.json
-	users
+        students.json
+	 teachers.json
+    students-docs.json
+    teachers-docs.json
+classrooms
     _design
-    	classrooms.json
-	classrooms-docs.json
+        classrooms.json
+        classrooms-docs.json
 ```
 
-### The Details
+### Create a data layout representing 2 databases
 
-1. Create a folder (`RESOURCE_PATH`) to contain your database representation.
-2. Within this folder, create a folder for each database. We will refer to each of these as a `db_folder`
+Let's create a data layout to describe two databases **users** and **classrooms**
 
-   Each `db_folder` name is used as the database name.
+1. **Create two folders, one for `users` and another for `classrooms`.**
 
-3. Within each `db_folder`, _optionally_ create a `_design` folder.
+	```shell
+	users/
+	classrooms/
+	```
+	**Note:** Couchinator will use the folder name as the database name
 
-   Within each `_design` folder, create zero or more `.json` files. Each `.json` file _must_ contain a _single_ [design document](http://docs.couchdb.org/en/2.0.0/json-structure.html#design-document).
+2. **Within each folder _optionally_ create a `_design` folder to store any design documents**
 
-   For example, `users/_design/students.json`
+	```shell
+	users/
+	    _design/
+	classrooms/
+	    _design/
+	```
 
-   ```
+3. **Create design document(s) and store them in the appropriate `_design` folder**
+
+   In the example below, we create two design documents in the `schools` database and one in the `users` database.
+
+	```shell
+	users/
+	    _design/
+	        students.json
+	        teachers.json
+	classrooms/
+	    _design/
+	        classrooms.json
+	```
+
+	The contents of each design document `.json` must be a valid CouchDB [design document]([design document](http://docs.couchdb.org/en/2.0.0/json-structure.html#design-document)).
+	
+	For example, `students.json`:
+	
+   ```json
    {
      "_id": "_design/students",
      "views": {
@@ -135,11 +165,29 @@ Note: The `_design` folder contains your design documents
    }
    ```
 
-4. Within each `db_folder`, _optionally_ create zero or more `.json` files. Each `.json` file should contain the documents to be added at creation time. They must be specified using CouchDB [bulk document](http://docs.couchdb.org/en/2.0.0/json-structure.html#bulk-documents) format.
+4. **Create the data to store in each database**
 
-   For example, `users/students-docs.json
+	- Data must be stored using CouchDB's [bulk document](http://docs.couchdb.org/en/2.0.0/json-structure.html#bulk-documents) format
+	- The data may be stored in a _single_ JSON file or spread across _multiple_ JSON files (useful for organizing data)
 
-   ```
+	```shell
+	users/
+	    _design/
+	        students.json
+	        teachers.json
+	    students-docs.json   # contains student data
+	    teachers-docs.json   # contains teacher data
+	
+	classrooms/
+	    _design/
+	        classrooms.json
+	    users-docs.json
+	```
+	
+
+   For example, `student-docs.json` contains students
+
+   ```json
    {
      "docs": [
        {
@@ -156,55 +204,10 @@ Note: The `_design` folder contains your design documents
    }
    ```
 
-   **Note** that Documents may reside in a single `.json file` or may span multiple `.json` files for readability. **couchinator** aggregrates documents spanning multiple files into a single bulk request.
+5. **Run couchinator to create each database**
 
-## Example
-
-See examples/db-resources.
-
-To run the the example:
-
-- clone this repo
-- `cd examples`
-- edit examples.js and set `<CLOUDANT-URL>` to your cloudant url
-- Run `node example`
-- Your database should now contain documents
-
-### Design doc representation
-
-Its a standard cloudant design doc.
-e.g. `designdoc1-1.json` above
-
-```json
-{
-  "_id": "_design/districts",
-  "views": {
-    "byId": {
-      "map": "function (doc) {  if (doc.type === 'district') emit(doc._id, doc);}"
-    }
-  },
-  "language": "javascript"
-}
-```
-
-### Doc representation
-
-It's a standard bulk doc e.g. `bulkdocs1-1.json` above
-
-```json
-{
-  "docs": [
-    {
-      "name": "Sammy",
-      "type": "person"
-    },
-    {
-      "name": "June",
-      "type": "person"
-    }
-  ]
-}
-```
+See [Junit example](#junit-example)
+	
 
 ## License
 
