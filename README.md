@@ -1,5 +1,7 @@
 # couchinator-java-wrapper
 
+![](https://travis-ci.org/cdimascio/couchinator-java-wrapper.svg?branch=master)
+
 Fixtures for [CouchDB](http://couchdb.apache.org/) and [IBM Cloudant](https://www.ibm.com/cloud/cloudant).
 
 *Setup* and *teardown* cloudant databases with ease. Couchinator is a great tool for unit testing and more. Couchinator is both a library and a [command line utility](https://github.com/cdimascio/couchinator).
@@ -21,14 +23,14 @@ The project is a Java wrapper around [couchinator](https://github.com/cdimascio/
 <dependency>
     <groupId>io.github.cdimascio</groupId>
     <artifactId>couchinator-java-wrapper</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.0'
+compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.1'
 ```
 
 ### Import
