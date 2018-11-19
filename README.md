@@ -220,7 +220,7 @@ couchinator-java-wrapper wraps [couchinator](https://github.com/cdimascio/couchi
 language: java
 jdk:
 - oraclejdk8
-- 
+ 
 before_install:
 - nvm install 10 # install node.js
 
