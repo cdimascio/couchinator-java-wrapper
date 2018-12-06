@@ -158,7 +158,11 @@ Let's create a data layout to describe two databases **users** and **classrooms*
      "_id": "_design/students",
      "views": {
        "byId": {
-         "map": "function (doc) {  if (doc.type === 'student') emit(doc._id, doc);}"
+          "map": "function (doc) {  
+	      if (doc.type === 'student') {
+	          emit(doc._id, doc);
+	      }
+          }"
        }
      },
      "language": "javascript"
@@ -216,7 +220,7 @@ couchinator-java-wrapper wraps [couchinator](https://github.com/cdimascio/couchi
 language: java
 jdk:
 - oraclejdk8
-- 
+ 
 before_install:
 - nvm install 10 # install node.js
 
@@ -227,4 +231,4 @@ script:
 
 ## License
 
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)
