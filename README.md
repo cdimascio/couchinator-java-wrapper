@@ -50,7 +50,7 @@ Couchinator couchinator = Couchinator.build()
 Couchinator couchinator = Couchinator
 	.configure
 	.url("<YOUR_COUCHDB_URL>")
-	.resources("./my-fixtures)
+	.resources("./my-fixtures")
 	.affectDesignDocsOnly(true)
 	.build()
 
