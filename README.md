@@ -26,14 +26,14 @@ The project is a Java wrapper around [couchinator](https://github.com/cdimascio/
 <dependency>
     <groupId>io.github.cdimascio</groupId>
     <artifactId>couchinator-java-wrapper</artifactId>
-    <version>1.0.1</version>
+    <version>2.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-compile 'io.github.cdimascio:couchinator-java-wrapper:1.0.1'
+compile 'io.github.cdimascio:couchinator-java-wrapper:2.0.1'
 ```
 
 ### Import
@@ -45,7 +45,14 @@ import io.github.cdimascio.couchinatorw.Couchinator;
 ## Usage
 
 ```java
-Couchinator couchinator = new Couchinator(url, resourceDir)
+Couchinator couchinator = Couchinator.build()
+// or 
+Couchinator couchinator = Couchinator
+	.configure
+	.url("<YOUR_COUCHDB_URL>")
+	.resources("./my-fixtures)
+	.affectDesignDocsOnly(true)
+	.build()
 
 // Setup the databases and fixtures defined in your data layout
 couchinator.create();
@@ -64,10 +71,11 @@ couchinator.destroy();
 ```java
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExampleUnitTest {
-    private Couchinator couchinator = new Couchinator(
-        "http://localhost:5984",         // couchdb or cloudant url (include usename/password)
-        "./src/test/resources/fixtures"  // fixtures resource location
-    );
+    private Couchinator couchinator = Couchinator
+		.configure()
+		.url("http://localhost:5984")     // couchdb or cloudant url (include usename/password)
+		.resources("./src/test/resources/fixtures")  // fixtures resource location
+		.build();
 
     @BeforeAll
     void beforeAll() throws CouchinatorException{
