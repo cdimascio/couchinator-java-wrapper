@@ -14,6 +14,8 @@ public class Couchinator {
     private String url;
     private String resourcePath;
     private String npxPath;
+    private String dbNamePrefix;
+    private boolean ddocsOnly;
 
     /**
      * Create a new instance of couchinator
@@ -21,25 +23,33 @@ public class Couchinator {
      * @param url The url to CouchDB or IBM Cloudant. It should include the username and password if required.
      * @param resourcePath The path to the database fixtures. The file structure of fixtures should follow
      *                      that described in the Data Layout documentation found here
+     * @param dbNamePrefix A prefix for each database name. A database name is prefix+db folder name
+     * @param ddocsOnly update or create design docs only, leaving all other db records in tact
      * @see <a href="https://github.com/cdimascio/couchinator-java-wrapper">The complete documentation</a>
      */
-    public Couchinator(String npxPath, String url, String resourcePath) {
+    Couchinator(String npxPath, String url, String resourcePath, String dbNamePrefix, boolean ddocsOnly) {
         this.npxPath = npxPath;
         this.url = url;
         this.resourcePath = resourcePath;
+        this.dbNamePrefix = dbNamePrefix;
+        this.ddocsOnly = ddocsOnly;
     }
 
     /**
-     * Create a new instance of couchinator
-     * @param url The url to CouchDB or IBM Cloudant. <p>It should include the username and password if required.</p>
-     * @param resourcePath The path to the database fixtures. <p>The file structure of fixtures should follow
-     *                      that described in the Data Layout documentation found here</p>
-     * @see <a href="https://github.com/cdimascio/couchinator-java-wrapper">The complete documentation</a>
+     * Configure a new Couchinator instance
+     * @return
      */
-    public Couchinator(String url, String resourcePath) {
-        this.url = url;
-        this.resourcePath = resourcePath;
-        this.npxPath = "npx";
+    public static CouchinatorBuilder configure() {
+        return new CouchinatorBuilder();
+    }
+
+    /**
+     * Builds a new couchinator instance using defaults, whereby url = "http://localhost:5984", resources = "./fixtures",
+     * affectDesignDocsOnly = false, npx = "npx"  and prefix = null
+     * @return
+     */
+    public static Couchinator build() {
+        return new CouchinatorBuilder().build();
     }
 
     /**
@@ -79,6 +89,10 @@ public class Couchinator {
             add(url);
             add("--path");
             add(resourcePath);
+            add("--prefix");
+            add(dbNamePrefix);
+            add("--ddocsonly");
+            add(Boolean.toString(ddocsOnly));
         }};
 
         try {

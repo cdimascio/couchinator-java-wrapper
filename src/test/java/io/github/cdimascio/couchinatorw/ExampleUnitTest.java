@@ -9,10 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ExampleUnitTest {
-    private Couchinator couchinator = new Couchinator(
-        "http://localhost:5984",
-        "./src/test/resources/fixtures"
-    );
+    private Couchinator couchinator = Couchinator
+            .configure()
+            .url("http://localhost:5984")
+            .resources("./src/test/resources/fixtures")
+            .prefix("test-")
+            .build();
 
     @BeforeAll
     void beforeAll() throws CouchinatorException{

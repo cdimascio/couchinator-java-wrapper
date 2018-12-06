@@ -10,7 +10,7 @@
         <file>
             <source>pom.xml</source>
             <outputDirectory>/</outputDirectory>
-            <destName>couchinator-java-wrapper-${app.version}.pom</destName>
+            <destName>couchinator-java-wrapper-${project.version}.pom</destName>
         </file>
     </files>
 </assembly>
